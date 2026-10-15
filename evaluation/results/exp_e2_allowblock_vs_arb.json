@@ -1,0 +1,1255 @@
+{
+  "question": "Does rewriting reduce unnecessary blocking?",
+  "results": {
+    "hybrid_allow_block_only": {
+      "final_test": {
+        "name": "hybrid_allow_block_only",
+        "n": 815,
+        "decision_accuracy": 0.3828,
+        "security_recall": 1.0,
+        "safety_constraint_violation_rate": 0.0,
+        "unsafe_among_released": 0.0,
+        "false_positive_rate": 0.0234,
+        "false_block_rate_benign": 0.0234,
+        "unnecessary_block_rate": 1.0,
+        "legit_blocked_rate": 0.6327,
+        "legit_utility": 0.3673,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 118.46,
+          "p95": 193.28,
+          "p99": 255.2
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 292,
+            "REWRITE": 0,
+            "BLOCK": 7
+          },
+          "REWRITE": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 496
+          },
+          "BLOCK": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 20
+          }
+        },
+        "action_counts": {
+          "ALLOW": 292,
+          "REWRITE": 0,
+          "BLOCK": 523
+        },
+        "set": "final_test",
+        "breakdowns": {
+          "by_category": {
+            "benign": {
+              "n": 299,
+              "decision_accuracy": 0.9766,
+              "security_recall": null
+            },
+            "instruction_conflict": {
+              "n": 132,
+              "decision_accuracy": 0.0227,
+              "security_recall": 1.0
+            },
+            "jailbreak": {
+              "n": 137,
+              "decision_accuracy": 0.0,
+              "security_recall": 1.0
+            },
+            "prompt_injection": {
+              "n": 191,
+              "decision_accuracy": 0.089,
+              "security_recall": 1.0
+            },
+            "prompt_leak": {
+              "n": 56,
+              "decision_accuracy": 0.0,
+              "security_recall": 1.0
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": {
+              "n": 33,
+              "decision_accuracy": 1.0,
+              "security_recall": null
+            },
+            "40-100": {
+              "n": 343,
+              "decision_accuracy": 0.4985,
+              "security_recall": 1.0
+            },
+            "100-200": {
+              "n": 419,
+              "decision_accuracy": 0.2434,
+              "security_recall": 1.0
+            },
+            ">200": {
+              "n": 20,
+              "decision_accuracy": 0.3,
+              "security_recall": 1.0
+            }
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 793,
+              "decision_accuracy": 0.3657,
+              "security_recall": 1.0
+            },
+            "with history": {
+              "n": 22,
+              "decision_accuracy": 1.0,
+              "security_recall": null
+            }
+          }
+        }
+      },
+      "unseen_test": {
+        "name": "hybrid_allow_block_only",
+        "n": 109,
+        "decision_accuracy": 0.0,
+        "security_recall": 0.6789,
+        "safety_constraint_violation_rate": 0.3211,
+        "unsafe_among_released": 1.0,
+        "false_positive_rate": null,
+        "false_block_rate_benign": null,
+        "unnecessary_block_rate": 0.6789,
+        "legit_blocked_rate": 0.6789,
+        "legit_utility": 0.0,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 155.18,
+          "p95": 266.34,
+          "p99": 289.59
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "REWRITE": {
+            "ALLOW": 35,
+            "REWRITE": 0,
+            "BLOCK": 74
+          },
+          "BLOCK": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          }
+        },
+        "action_counts": {
+          "ALLOW": 35,
+          "REWRITE": 0,
+          "BLOCK": 74
+        },
+        "set": "unseen_test",
+        "breakdowns": {
+          "by_category": {
+            "jailbreak": {
+              "n": 37,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.8649
+            },
+            "prompt_injection": {
+              "n": 36,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.4722
+            },
+            "prompt_leak": {
+              "n": 36,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.6944
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": null,
+            "40-100": {
+              "n": 14,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.8571
+            },
+            "100-200": {
+              "n": 93,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.6452
+            },
+            ">200": {
+              "n": 2,
+              "decision_accuracy": 0.0,
+              "security_recall": 1.0
+            }
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 109,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.6789
+            },
+            "with history": null
+          }
+        }
+      },
+      "shift_obfuscation": {
+        "name": "hybrid_allow_block_only",
+        "n": 280,
+        "decision_accuracy": 0.05,
+        "security_recall": 0.9929,
+        "safety_constraint_violation_rate": 0.0071,
+        "unsafe_among_released": 1.0,
+        "false_positive_rate": null,
+        "false_block_rate_benign": null,
+        "unnecessary_block_rate": 0.9925,
+        "legit_blocked_rate": 0.9925,
+        "legit_utility": 0.0,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 15.09,
+          "p95": 225.2,
+          "p99": 273.52
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "REWRITE": {
+            "ALLOW": 2,
+            "REWRITE": 0,
+            "BLOCK": 264
+          },
+          "BLOCK": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 14
+          }
+        },
+        "action_counts": {
+          "ALLOW": 2,
+          "REWRITE": 0,
+          "BLOCK": 278
+        },
+        "set": "shift_obfuscation",
+        "breakdowns": {
+          "by_category": {
+            "instruction_conflict": {
+              "n": 56,
+              "decision_accuracy": 0.0,
+              "security_recall": 1.0
+            },
+            "jailbreak": {
+              "n": 56,
+              "decision_accuracy": 0.0,
+              "security_recall": 1.0
+            },
+            "prompt_injection": {
+              "n": 119,
+              "decision_accuracy": 0.1176,
+              "security_recall": 0.9832
+            },
+            "prompt_leak": {
+              "n": 49,
+              "decision_accuracy": 0.0,
+              "security_recall": 1.0
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": null,
+            "40-100": {
+              "n": 97,
+              "decision_accuracy": 0.0,
+              "security_recall": 1.0
+            },
+            "100-200": {
+              "n": 177,
+              "decision_accuracy": 0.0791,
+              "security_recall": 0.9944
+            },
+            ">200": {
+              "n": 6,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.8333
+            }
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 280,
+              "decision_accuracy": 0.05,
+              "security_recall": 0.9929
+            },
+            "with history": null
+          }
+        }
+      },
+      "shift_paraphrase": {
+        "name": "hybrid_allow_block_only",
+        "n": 60,
+        "decision_accuracy": 0.4333,
+        "security_recall": 0.9167,
+        "safety_constraint_violation_rate": 0.05,
+        "unsafe_among_released": 0.1364,
+        "false_positive_rate": 0.2083,
+        "false_block_rate_benign": 0.2083,
+        "unnecessary_block_rate": 0.9286,
+        "legit_blocked_rate": 0.5962,
+        "legit_utility": 0.3654,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 89.85,
+          "p95": 233.58,
+          "p99": 277.3
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 19,
+            "REWRITE": 0,
+            "BLOCK": 5
+          },
+          "REWRITE": {
+            "ALLOW": 2,
+            "REWRITE": 0,
+            "BLOCK": 26
+          },
+          "BLOCK": {
+            "ALLOW": 1,
+            "REWRITE": 0,
+            "BLOCK": 7
+          }
+        },
+        "action_counts": {
+          "ALLOW": 22,
+          "REWRITE": 0,
+          "BLOCK": 38
+        },
+        "set": "shift_paraphrase",
+        "breakdowns": {
+          "by_category": {
+            "benign": {
+              "n": 24,
+              "decision_accuracy": 0.7917,
+              "security_recall": null
+            },
+            "instruction_conflict": {
+              "n": 6,
+              "decision_accuracy": 0.0,
+              "security_recall": 1.0
+            },
+            "jailbreak": {
+              "n": 6,
+              "decision_accuracy": 0.0,
+              "security_recall": 1.0
+            },
+            "prompt_injection": {
+              "n": 18,
+              "decision_accuracy": 0.3889,
+              "security_recall": 0.9444
+            },
+            "prompt_leak": {
+              "n": 6,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.6667
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": {
+              "n": 2,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            },
+            "40-100": {
+              "n": 42,
+              "decision_accuracy": 0.5714,
+              "security_recall": 0.9474
+            },
+            "100-200": {
+              "n": 16,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.875
+            },
+            ">200": null
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 60,
+              "decision_accuracy": 0.4333,
+              "security_recall": 0.9167
+            },
+            "with history": null
+          }
+        }
+      },
+      "shift_context": {
+        "name": "hybrid_allow_block_only",
+        "n": 24,
+        "decision_accuracy": 1.0,
+        "security_recall": 1.0,
+        "safety_constraint_violation_rate": 0.0,
+        "unsafe_among_released": 0.0,
+        "false_positive_rate": 0.0,
+        "false_block_rate_benign": 0.0,
+        "unnecessary_block_rate": null,
+        "legit_blocked_rate": 0.0,
+        "legit_utility": 1.0,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 70.23,
+          "p95": 133.11,
+          "p99": 159.17
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 8,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "REWRITE": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "BLOCK": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 16
+          }
+        },
+        "action_counts": {
+          "ALLOW": 8,
+          "REWRITE": 0,
+          "BLOCK": 16
+        },
+        "set": "shift_context",
+        "breakdowns": {
+          "by_category": {
+            "benign": {
+              "n": 8,
+              "decision_accuracy": 1.0,
+              "security_recall": null
+            },
+            "jailbreak": {
+              "n": 16,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": {
+              "n": 3,
+              "decision_accuracy": 1.0,
+              "security_recall": null
+            },
+            "40-100": {
+              "n": 21,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            },
+            "100-200": null,
+            ">200": null
+          },
+          "by_context_length": {
+            "no history": null,
+            "with history": {
+              "n": 24,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            }
+          }
+        }
+      },
+      "real_test": {
+        "name": "hybrid_allow_block_only",
+        "n": 2016,
+        "decision_accuracy": 0.8695,
+        "security_recall": 0.8808,
+        "safety_constraint_violation_rate": 0.0228,
+        "unsafe_among_released": 0.0315,
+        "false_positive_rate": 0.1331,
+        "false_block_rate_benign": 0.1331,
+        "unnecessary_block_rate": null,
+        "legit_blocked_rate": 0.1331,
+        "legit_utility": 0.8669,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 192.65,
+          "p95": 1101.52,
+          "p99": 1410.88
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 1413,
+            "REWRITE": 0,
+            "BLOCK": 217
+          },
+          "REWRITE": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "BLOCK": {
+            "ALLOW": 46,
+            "REWRITE": 0,
+            "BLOCK": 340
+          }
+        },
+        "action_counts": {
+          "ALLOW": 1459,
+          "REWRITE": 0,
+          "BLOCK": 557
+        },
+        "set": "real_test",
+        "breakdowns": {
+          "by_category": {
+            "benign": {
+              "n": 1630,
+              "decision_accuracy": 0.8669,
+              "security_recall": null
+            },
+            "harmful": {
+              "n": 193,
+              "decision_accuracy": 0.9067,
+              "security_recall": 0.9067
+            },
+            "jailbreak": {
+              "n": 193,
+              "decision_accuracy": 0.8549,
+              "security_recall": 0.8549
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": {
+              "n": 88,
+              "decision_accuracy": 0.9773,
+              "security_recall": 0.5
+            },
+            "40-100": {
+              "n": 726,
+              "decision_accuracy": 0.9601,
+              "security_recall": 0.8994
+            },
+            "100-200": {
+              "n": 318,
+              "decision_accuracy": 0.9403,
+              "security_recall": 0.8611
+            },
+            ">200": {
+              "n": 884,
+              "decision_accuracy": 0.759,
+              "security_recall": 0.877
+            }
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 2016,
+              "decision_accuracy": 0.8695,
+              "security_recall": 0.8808
+            },
+            "with history": null
+          }
+        }
+      }
+    },
+    "hybrid_base": {
+      "final_test": {
+        "name": "hybrid_base",
+        "n": 815,
+        "decision_accuracy": 0.9742,
+        "security_recall": 1.0,
+        "safety_constraint_violation_rate": 0.0012,
+        "unsafe_among_released": 0.0013,
+        "false_positive_rate": 0.0234,
+        "false_block_rate_benign": 0.0,
+        "unnecessary_block_rate": 0.0282,
+        "legit_blocked_rate": 0.0176,
+        "legit_utility": 0.9522,
+        "rewrite_success": 0.9647,
+        "intent_preservation_after": 0.8517,
+        "latency_ms": {
+          "p50": 147.21,
+          "p95": 280.86,
+          "p99": 360.76
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 292,
+            "REWRITE": 7,
+            "BLOCK": 0
+          },
+          "REWRITE": {
+            "ALLOW": 0,
+            "REWRITE": 482,
+            "BLOCK": 14
+          },
+          "BLOCK": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 20
+          }
+        },
+        "action_counts": {
+          "ALLOW": 292,
+          "REWRITE": 489,
+          "BLOCK": 34
+        },
+        "set": "final_test",
+        "breakdowns": {
+          "by_category": {
+            "benign": {
+              "n": 299,
+              "decision_accuracy": 0.9766,
+              "security_recall": null
+            },
+            "instruction_conflict": {
+              "n": 132,
+              "decision_accuracy": 0.9394,
+              "security_recall": 1.0
+            },
+            "jailbreak": {
+              "n": 137,
+              "decision_accuracy": 0.9927,
+              "security_recall": 1.0
+            },
+            "prompt_injection": {
+              "n": 191,
+              "decision_accuracy": 0.9738,
+              "security_recall": 1.0
+            },
+            "prompt_leak": {
+              "n": 56,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": {
+              "n": 33,
+              "decision_accuracy": 1.0,
+              "security_recall": null
+            },
+            "40-100": {
+              "n": 343,
+              "decision_accuracy": 0.9942,
+              "security_recall": 1.0
+            },
+            "100-200": {
+              "n": 419,
+              "decision_accuracy": 0.9547,
+              "security_recall": 1.0
+            },
+            ">200": {
+              "n": 20,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            }
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 793,
+              "decision_accuracy": 0.9735,
+              "security_recall": 1.0
+            },
+            "with history": {
+              "n": 22,
+              "decision_accuracy": 1.0,
+              "security_recall": null
+            }
+          }
+        }
+      },
+      "unseen_test": {
+        "name": "hybrid_base",
+        "n": 109,
+        "decision_accuracy": 0.6606,
+        "security_recall": 0.6789,
+        "safety_constraint_violation_rate": 0.3211,
+        "unsafe_among_released": 0.3271,
+        "false_positive_rate": null,
+        "false_block_rate_benign": null,
+        "unnecessary_block_rate": 0.0183,
+        "legit_blocked_rate": 0.0183,
+        "legit_utility": 0.6514,
+        "rewrite_success": 0.9861,
+        "intent_preservation_after": 0.866,
+        "latency_ms": {
+          "p50": 199.52,
+          "p95": 346.39,
+          "p99": 423.66
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "REWRITE": {
+            "ALLOW": 35,
+            "REWRITE": 72,
+            "BLOCK": 2
+          },
+          "BLOCK": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          }
+        },
+        "action_counts": {
+          "ALLOW": 35,
+          "REWRITE": 72,
+          "BLOCK": 2
+        },
+        "set": "unseen_test",
+        "breakdowns": {
+          "by_category": {
+            "jailbreak": {
+              "n": 37,
+              "decision_accuracy": 0.8649,
+              "security_recall": 0.8649
+            },
+            "prompt_injection": {
+              "n": 36,
+              "decision_accuracy": 0.4167,
+              "security_recall": 0.4722
+            },
+            "prompt_leak": {
+              "n": 36,
+              "decision_accuracy": 0.6944,
+              "security_recall": 0.6944
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": null,
+            "40-100": {
+              "n": 14,
+              "decision_accuracy": 0.8571,
+              "security_recall": 0.8571
+            },
+            "100-200": {
+              "n": 93,
+              "decision_accuracy": 0.6237,
+              "security_recall": 0.6452
+            },
+            ">200": {
+              "n": 2,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            }
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 109,
+              "decision_accuracy": 0.6606,
+              "security_recall": 0.6789
+            },
+            "with history": null
+          }
+        }
+      },
+      "shift_obfuscation": {
+        "name": "hybrid_base",
+        "n": 280,
+        "decision_accuracy": 0.9357,
+        "security_recall": 0.9929,
+        "safety_constraint_violation_rate": 0.0071,
+        "unsafe_among_released": 0.0079,
+        "false_positive_rate": null,
+        "false_block_rate_benign": null,
+        "unnecessary_block_rate": 0.0564,
+        "legit_blocked_rate": 0.0564,
+        "legit_utility": 0.8947,
+        "rewrite_success": 0.9558,
+        "intent_preservation_after": 0.8491,
+        "latency_ms": {
+          "p50": 17.23,
+          "p95": 313.44,
+          "p99": 398.83
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "REWRITE": {
+            "ALLOW": 2,
+            "REWRITE": 249,
+            "BLOCK": 15
+          },
+          "BLOCK": {
+            "ALLOW": 0,
+            "REWRITE": 1,
+            "BLOCK": 13
+          }
+        },
+        "action_counts": {
+          "ALLOW": 2,
+          "REWRITE": 250,
+          "BLOCK": 28
+        },
+        "set": "shift_obfuscation",
+        "breakdowns": {
+          "by_category": {
+            "instruction_conflict": {
+              "n": 56,
+              "decision_accuracy": 0.9821,
+              "security_recall": 1.0
+            },
+            "jailbreak": {
+              "n": 56,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            },
+            "prompt_injection": {
+              "n": 119,
+              "decision_accuracy": 0.8571,
+              "security_recall": 0.9832
+            },
+            "prompt_leak": {
+              "n": 49,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": null,
+            "40-100": {
+              "n": 97,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            },
+            "100-200": {
+              "n": 177,
+              "decision_accuracy": 0.904,
+              "security_recall": 0.9944
+            },
+            ">200": {
+              "n": 6,
+              "decision_accuracy": 0.8333,
+              "security_recall": 0.8333
+            }
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 280,
+              "decision_accuracy": 0.9357,
+              "security_recall": 0.9929
+            },
+            "with history": null
+          }
+        }
+      },
+      "shift_paraphrase": {
+        "name": "hybrid_base",
+        "n": 60,
+        "decision_accuracy": 0.8667,
+        "security_recall": 0.9167,
+        "safety_constraint_violation_rate": 0.05,
+        "unsafe_among_released": 0.0625,
+        "false_positive_rate": 0.2083,
+        "false_block_rate_benign": 0.2083,
+        "unnecessary_block_rate": 0.0,
+        "legit_blocked_rate": 0.0962,
+        "legit_utility": 0.8654,
+        "rewrite_success": 1.0,
+        "intent_preservation_after": 0.9442,
+        "latency_ms": {
+          "p50": 95.31,
+          "p95": 271.71,
+          "p99": 326.64
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 19,
+            "REWRITE": 0,
+            "BLOCK": 5
+          },
+          "REWRITE": {
+            "ALLOW": 2,
+            "REWRITE": 26,
+            "BLOCK": 0
+          },
+          "BLOCK": {
+            "ALLOW": 1,
+            "REWRITE": 0,
+            "BLOCK": 7
+          }
+        },
+        "action_counts": {
+          "ALLOW": 22,
+          "REWRITE": 26,
+          "BLOCK": 12
+        },
+        "set": "shift_paraphrase",
+        "breakdowns": {
+          "by_category": {
+            "benign": {
+              "n": 24,
+              "decision_accuracy": 0.7917,
+              "security_recall": null
+            },
+            "instruction_conflict": {
+              "n": 6,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            },
+            "jailbreak": {
+              "n": 6,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            },
+            "prompt_injection": {
+              "n": 18,
+              "decision_accuracy": 0.9444,
+              "security_recall": 0.9444
+            },
+            "prompt_leak": {
+              "n": 6,
+              "decision_accuracy": 0.6667,
+              "security_recall": 0.6667
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": {
+              "n": 2,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            },
+            "40-100": {
+              "n": 42,
+              "decision_accuracy": 0.8571,
+              "security_recall": 0.9474
+            },
+            "100-200": {
+              "n": 16,
+              "decision_accuracy": 0.875,
+              "security_recall": 0.875
+            },
+            ">200": null
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 60,
+              "decision_accuracy": 0.8667,
+              "security_recall": 0.9167
+            },
+            "with history": null
+          }
+        }
+      },
+      "shift_context": {
+        "name": "hybrid_base",
+        "n": 24,
+        "decision_accuracy": 1.0,
+        "security_recall": 1.0,
+        "safety_constraint_violation_rate": 0.0,
+        "unsafe_among_released": 0.0,
+        "false_positive_rate": 0.0,
+        "false_block_rate_benign": 0.0,
+        "unnecessary_block_rate": null,
+        "legit_blocked_rate": 0.0,
+        "legit_utility": 1.0,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 70.23,
+          "p95": 133.11,
+          "p99": 159.17
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 8,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "REWRITE": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "BLOCK": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 16
+          }
+        },
+        "action_counts": {
+          "ALLOW": 8,
+          "REWRITE": 0,
+          "BLOCK": 16
+        },
+        "set": "shift_context",
+        "breakdowns": {
+          "by_category": {
+            "benign": {
+              "n": 8,
+              "decision_accuracy": 1.0,
+              "security_recall": null
+            },
+            "jailbreak": {
+              "n": 16,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": {
+              "n": 3,
+              "decision_accuracy": 1.0,
+              "security_recall": null
+            },
+            "40-100": {
+              "n": 21,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            },
+            "100-200": null,
+            ">200": null
+          },
+          "by_context_length": {
+            "no history": null,
+            "with history": {
+              "n": 24,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            }
+          }
+        }
+      },
+      "real_test": {
+        "name": "hybrid_base",
+        "n": 2016,
+        "decision_accuracy": 0.8363,
+        "security_recall": 0.8808,
+        "safety_constraint_violation_rate": 0.0228,
+        "unsafe_among_released": 0.0271,
+        "false_positive_rate": 0.1331,
+        "false_block_rate_benign": 0.027,
+        "unnecessary_block_rate": null,
+        "legit_blocked_rate": 0.027,
+        "legit_utility": 0.8669,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 196.75,
+          "p95": 1308.74,
+          "p99": 1759.13
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 1413,
+            "REWRITE": 173,
+            "BLOCK": 44
+          },
+          "REWRITE": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "BLOCK": {
+            "ALLOW": 46,
+            "REWRITE": 67,
+            "BLOCK": 273
+          }
+        },
+        "action_counts": {
+          "ALLOW": 1459,
+          "REWRITE": 240,
+          "BLOCK": 317
+        },
+        "set": "real_test",
+        "breakdowns": {
+          "by_category": {
+            "benign": {
+              "n": 1630,
+              "decision_accuracy": 0.8669,
+              "security_recall": null
+            },
+            "harmful": {
+              "n": 193,
+              "decision_accuracy": 0.8912,
+              "security_recall": 0.9067
+            },
+            "jailbreak": {
+              "n": 193,
+              "decision_accuracy": 0.5233,
+              "security_recall": 0.8549
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": {
+              "n": 88,
+              "decision_accuracy": 0.9773,
+              "security_recall": 0.5
+            },
+            "40-100": {
+              "n": 726,
+              "decision_accuracy": 0.9587,
+              "security_recall": 0.8994
+            },
+            "100-200": {
+              "n": 318,
+              "decision_accuracy": 0.934,
+              "security_recall": 0.8611
+            },
+            ">200": {
+              "n": 884,
+              "decision_accuracy": 0.6867,
+              "security_recall": 0.877
+            }
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 2016,
+              "decision_accuracy": 0.8363,
+              "security_recall": 0.8808
+            },
+            "with history": null
+          }
+        }
+      }
+    }
+  },
+  "comparison": {
+    "final_test": {
+      "legit_blocked_rate": {
+        "allow_block": 0.6327,
+        "allow_rewrite_block": 0.0176
+      },
+      "legit_utility": {
+        "allow_block": 0.3673,
+        "allow_rewrite_block": 0.9522
+      },
+      "security_recall": {
+        "allow_block": 1.0,
+        "allow_rewrite_block": 1.0
+      },
+      "false_positive_rate": {
+        "allow_block": 0.0234,
+        "allow_rewrite_block": 0.0234
+      },
+      "safety_constraint_violation_rate": {
+        "allow_block": 0.0,
+        "allow_rewrite_block": 0.0012
+      }
+    },
+    "unseen_test": {
+      "legit_blocked_rate": {
+        "allow_block": 0.6789,
+        "allow_rewrite_block": 0.0183
+      },
+      "legit_utility": {
+        "allow_block": 0.0,
+        "allow_rewrite_block": 0.6514
+      },
+      "security_recall": {
+        "allow_block": 0.6789,
+        "allow_rewrite_block": 0.6789
+      },
+      "false_positive_rate": {
+        "allow_block": null,
+        "allow_rewrite_block": null
+      },
+      "safety_constraint_violation_rate": {
+        "allow_block": 0.3211,
+        "allow_rewrite_block": 0.3211
+      }
+    },
+    "shift_obfuscation": {
+      "legit_blocked_rate": {
+        "allow_block": 0.9925,
+        "allow_rewrite_block": 0.0564
+      },
+      "legit_utility": {
+        "allow_block": 0.0,
+        "allow_rewrite_block": 0.8947
+      },
+      "security_recall": {
+        "allow_block": 0.9929,
+        "allow_rewrite_block": 0.9929
+      },
+      "false_positive_rate": {
+        "allow_block": null,
+        "allow_rewrite_block": null
+      },
+      "safety_constraint_violation_rate": {
+        "allow_block": 0.0071,
+        "allow_rewrite_block": 0.0071
+      }
+    },
+    "shift_paraphrase": {
+      "legit_blocked_rate": {
+        "allow_block": 0.5962,
+        "allow_rewrite_block": 0.0962
+      },
+      "legit_utility": {
+        "allow_block": 0.3654,
+        "allow_rewrite_block": 0.8654
+      },
+      "security_recall": {
+        "allow_block": 0.9167,
+        "allow_rewrite_block": 0.9167
+      },
+      "false_positive_rate": {
+        "allow_block": 0.2083,
+        "allow_rewrite_block": 0.2083
+      },
+      "safety_constraint_violation_rate": {
+        "allow_block": 0.05,
+        "allow_rewrite_block": 0.05
+      }
+    },
+    "shift_context": {
+      "legit_blocked_rate": {
+        "allow_block": 0.0,
+        "allow_rewrite_block": 0.0
+      },
+      "legit_utility": {
+        "allow_block": 1.0,
+        "allow_rewrite_block": 1.0
+      },
+      "security_recall": {
+        "allow_block": 1.0,
+        "allow_rewrite_block": 1.0
+      },
+      "false_positive_rate": {
+        "allow_block": 0.0,
+        "allow_rewrite_block": 0.0
+      },
+      "safety_constraint_violation_rate": {
+        "allow_block": 0.0,
+        "allow_rewrite_block": 0.0
+      }
+    },
+    "real_test": {
+      "legit_blocked_rate": {
+        "allow_block": 0.1331,
+        "allow_rewrite_block": 0.027
+      },
+      "legit_utility": {
+        "allow_block": 0.8669,
+        "allow_rewrite_block": 0.8669
+      },
+      "security_recall": {
+        "allow_block": 0.8808,
+        "allow_rewrite_block": 0.8808
+      },
+      "false_positive_rate": {
+        "allow_block": 0.1331,
+        "allow_rewrite_block": 0.1331
+      },
+      "safety_constraint_violation_rate": {
+        "allow_block": 0.0228,
+        "allow_rewrite_block": 0.0228
+      }
+    }
+  }
+}

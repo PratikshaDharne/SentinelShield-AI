@@ -1,0 +1,13 @@
+FROM python:3.11-slim
+ARG WITH_ML=false
+ENV PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1
+WORKDIR /app
+RUN apt-get update && apt-get install -y --no-install-recommends curl libgomp1 && rm -rf /var/lib/apt/lists/*
+COPY requirements-core.txt requirements-ml.txt ./
+RUN pip install -r requirements-core.txt
+# WITH_ML=true adds MiniLM + Flan-T5 support (large: ~2 GB). Models are downloaded on first start into /root/.cache.
+RUN if [ "$WITH_ML" = "true" ]; then pip install -r requirements-ml.txt; fi
+COPY . .
+EXPOSE 8130
+HEALTHCHECK --interval=15s --timeout=5s --retries=10 CMD curl -fs http://localhost:8130/v1/health || exit 1
+CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8130"]

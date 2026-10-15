@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+sentinelshield_dev.db
+models/_t5_runs/
+models/rewriter_t5/
+datasets/external/
+.venv/

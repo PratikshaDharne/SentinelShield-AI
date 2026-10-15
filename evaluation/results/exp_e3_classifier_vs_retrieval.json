@@ -1,0 +1,1681 @@
+{
+  "question": "Does semantic retrieval improve context?",
+  "encoder": "minilm",
+  "note": "With the 'hash' encoder retrieval is lexical; run with MiniLM (sentence-transformers) for the semantic result.",
+  "results": {
+    "classifier_only": {
+      "final_test": {
+        "name": "classifier_only",
+        "n": 815,
+        "decision_accuracy": 0.3656,
+        "security_recall": 0.9961,
+        "safety_constraint_violation_rate": 0.0025,
+        "unsafe_among_released": 0.0071,
+        "false_positive_rate": 0.0702,
+        "false_block_rate_benign": 0.0702,
+        "unnecessary_block_rate": 0.996,
+        "legit_blocked_rate": 0.6478,
+        "legit_utility": 0.3497,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 118.46,
+          "p95": 193.28,
+          "p99": 255.2
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 278,
+            "REWRITE": 0,
+            "BLOCK": 21
+          },
+          "REWRITE": {
+            "ALLOW": 2,
+            "REWRITE": 0,
+            "BLOCK": 494
+          },
+          "BLOCK": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 20
+          }
+        },
+        "action_counts": {
+          "ALLOW": 280,
+          "REWRITE": 0,
+          "BLOCK": 535
+        },
+        "set": "final_test",
+        "breakdowns": {
+          "by_category": {
+            "benign": {
+              "n": 299,
+              "decision_accuracy": 0.9298,
+              "security_recall": null
+            },
+            "instruction_conflict": {
+              "n": 132,
+              "decision_accuracy": 0.0227,
+              "security_recall": 1.0
+            },
+            "jailbreak": {
+              "n": 137,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.9927
+            },
+            "prompt_injection": {
+              "n": 191,
+              "decision_accuracy": 0.089,
+              "security_recall": 1.0
+            },
+            "prompt_leak": {
+              "n": 56,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.9821
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": {
+              "n": 33,
+              "decision_accuracy": 1.0,
+              "security_recall": null
+            },
+            "40-100": {
+              "n": 343,
+              "decision_accuracy": 0.4694,
+              "security_recall": 0.9888
+            },
+            "100-200": {
+              "n": 419,
+              "decision_accuracy": 0.2363,
+              "security_recall": 1.0
+            },
+            ">200": {
+              "n": 20,
+              "decision_accuracy": 0.25,
+              "security_recall": 1.0
+            }
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 793,
+              "decision_accuracy": 0.3506,
+              "security_recall": 0.9961
+            },
+            "with history": {
+              "n": 22,
+              "decision_accuracy": 0.9091,
+              "security_recall": null
+            }
+          }
+        }
+      },
+      "unseen_test": {
+        "name": "classifier_only",
+        "n": 109,
+        "decision_accuracy": 0.0,
+        "security_recall": 0.8532,
+        "safety_constraint_violation_rate": 0.1468,
+        "unsafe_among_released": 1.0,
+        "false_positive_rate": null,
+        "false_block_rate_benign": null,
+        "unnecessary_block_rate": 0.8532,
+        "legit_blocked_rate": 0.8532,
+        "legit_utility": 0.0,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 155.18,
+          "p95": 266.34,
+          "p99": 289.59
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "REWRITE": {
+            "ALLOW": 16,
+            "REWRITE": 0,
+            "BLOCK": 93
+          },
+          "BLOCK": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          }
+        },
+        "action_counts": {
+          "ALLOW": 16,
+          "REWRITE": 0,
+          "BLOCK": 93
+        },
+        "set": "unseen_test",
+        "breakdowns": {
+          "by_category": {
+            "jailbreak": {
+              "n": 37,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.7297
+            },
+            "prompt_injection": {
+              "n": 36,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.9167
+            },
+            "prompt_leak": {
+              "n": 36,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.9167
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": null,
+            "40-100": {
+              "n": 14,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.9286
+            },
+            "100-200": {
+              "n": 93,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.8387
+            },
+            ">200": {
+              "n": 2,
+              "decision_accuracy": 0.0,
+              "security_recall": 1.0
+            }
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 109,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.8532
+            },
+            "with history": null
+          }
+        }
+      },
+      "shift_obfuscation": {
+        "name": "classifier_only",
+        "n": 280,
+        "decision_accuracy": 0.05,
+        "security_recall": 0.9893,
+        "safety_constraint_violation_rate": 0.0107,
+        "unsafe_among_released": 1.0,
+        "false_positive_rate": null,
+        "false_block_rate_benign": null,
+        "unnecessary_block_rate": 0.9887,
+        "legit_blocked_rate": 0.9887,
+        "legit_utility": 0.0,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 15.09,
+          "p95": 225.2,
+          "p99": 273.52
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "REWRITE": {
+            "ALLOW": 3,
+            "REWRITE": 0,
+            "BLOCK": 263
+          },
+          "BLOCK": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 14
+          }
+        },
+        "action_counts": {
+          "ALLOW": 3,
+          "REWRITE": 0,
+          "BLOCK": 277
+        },
+        "set": "shift_obfuscation",
+        "breakdowns": {
+          "by_category": {
+            "instruction_conflict": {
+              "n": 56,
+              "decision_accuracy": 0.0,
+              "security_recall": 1.0
+            },
+            "jailbreak": {
+              "n": 56,
+              "decision_accuracy": 0.0,
+              "security_recall": 1.0
+            },
+            "prompt_injection": {
+              "n": 119,
+              "decision_accuracy": 0.1176,
+              "security_recall": 0.9916
+            },
+            "prompt_leak": {
+              "n": 49,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.9592
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": null,
+            "40-100": {
+              "n": 97,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.9897
+            },
+            "100-200": {
+              "n": 177,
+              "decision_accuracy": 0.0791,
+              "security_recall": 0.9887
+            },
+            ">200": {
+              "n": 6,
+              "decision_accuracy": 0.0,
+              "security_recall": 1.0
+            }
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 280,
+              "decision_accuracy": 0.05,
+              "security_recall": 0.9893
+            },
+            "with history": null
+          }
+        }
+      },
+      "shift_paraphrase": {
+        "name": "classifier_only",
+        "n": 60,
+        "decision_accuracy": 0.2833,
+        "security_recall": 0.8333,
+        "safety_constraint_violation_rate": 0.1,
+        "unsafe_among_released": 0.375,
+        "false_positive_rate": 0.5833,
+        "false_block_rate_benign": 0.5833,
+        "unnecessary_block_rate": 0.8214,
+        "legit_blocked_rate": 0.7115,
+        "legit_utility": 0.1923,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 89.85,
+          "p95": 233.58,
+          "p99": 277.3
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 10,
+            "REWRITE": 0,
+            "BLOCK": 14
+          },
+          "REWRITE": {
+            "ALLOW": 5,
+            "REWRITE": 0,
+            "BLOCK": 23
+          },
+          "BLOCK": {
+            "ALLOW": 1,
+            "REWRITE": 0,
+            "BLOCK": 7
+          }
+        },
+        "action_counts": {
+          "ALLOW": 16,
+          "REWRITE": 0,
+          "BLOCK": 44
+        },
+        "set": "shift_paraphrase",
+        "breakdowns": {
+          "by_category": {
+            "benign": {
+              "n": 24,
+              "decision_accuracy": 0.4167,
+              "security_recall": null
+            },
+            "instruction_conflict": {
+              "n": 6,
+              "decision_accuracy": 0.0,
+              "security_recall": 1.0
+            },
+            "jailbreak": {
+              "n": 6,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.8333
+            },
+            "prompt_injection": {
+              "n": 18,
+              "decision_accuracy": 0.3889,
+              "security_recall": 0.8889
+            },
+            "prompt_leak": {
+              "n": 6,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.5
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": {
+              "n": 2,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            },
+            "40-100": {
+              "n": 42,
+              "decision_accuracy": 0.3571,
+              "security_recall": 0.8421
+            },
+            "100-200": {
+              "n": 16,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.8125
+            },
+            ">200": null
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 60,
+              "decision_accuracy": 0.2833,
+              "security_recall": 0.8333
+            },
+            "with history": null
+          }
+        }
+      },
+      "shift_context": {
+        "name": "classifier_only",
+        "n": 24,
+        "decision_accuracy": 0.8333,
+        "security_recall": 1.0,
+        "safety_constraint_violation_rate": 0.0,
+        "unsafe_among_released": 0.0,
+        "false_positive_rate": 0.5,
+        "false_block_rate_benign": 0.5,
+        "unnecessary_block_rate": null,
+        "legit_blocked_rate": 0.5,
+        "legit_utility": 0.5,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 70.23,
+          "p95": 133.11,
+          "p99": 159.17
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 4,
+            "REWRITE": 0,
+            "BLOCK": 4
+          },
+          "REWRITE": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "BLOCK": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 16
+          }
+        },
+        "action_counts": {
+          "ALLOW": 4,
+          "REWRITE": 0,
+          "BLOCK": 20
+        },
+        "set": "shift_context",
+        "breakdowns": {
+          "by_category": {
+            "benign": {
+              "n": 8,
+              "decision_accuracy": 0.5,
+              "security_recall": null
+            },
+            "jailbreak": {
+              "n": 16,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": {
+              "n": 3,
+              "decision_accuracy": 0.3333,
+              "security_recall": null
+            },
+            "40-100": {
+              "n": 21,
+              "decision_accuracy": 0.9048,
+              "security_recall": 1.0
+            },
+            "100-200": null,
+            ">200": null
+          },
+          "by_context_length": {
+            "no history": null,
+            "with history": {
+              "n": 24,
+              "decision_accuracy": 0.8333,
+              "security_recall": 1.0
+            }
+          }
+        }
+      },
+      "real_test": {
+        "name": "classifier_only",
+        "n": 2016,
+        "decision_accuracy": 0.8874,
+        "security_recall": 0.9197,
+        "safety_constraint_violation_rate": 0.0154,
+        "unsafe_among_released": 0.0212,
+        "false_positive_rate": 0.1202,
+        "false_block_rate_benign": 0.1202,
+        "unnecessary_block_rate": null,
+        "legit_blocked_rate": 0.1202,
+        "legit_utility": 0.8798,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 192.65,
+          "p95": 1101.52,
+          "p99": 1410.88
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 1434,
+            "REWRITE": 0,
+            "BLOCK": 196
+          },
+          "REWRITE": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "BLOCK": {
+            "ALLOW": 31,
+            "REWRITE": 0,
+            "BLOCK": 355
+          }
+        },
+        "action_counts": {
+          "ALLOW": 1465,
+          "REWRITE": 0,
+          "BLOCK": 551
+        },
+        "set": "real_test",
+        "breakdowns": {
+          "by_category": {
+            "benign": {
+              "n": 1630,
+              "decision_accuracy": 0.8798,
+              "security_recall": null
+            },
+            "harmful": {
+              "n": 193,
+              "decision_accuracy": 0.9793,
+              "security_recall": 0.9793
+            },
+            "jailbreak": {
+              "n": 193,
+              "decision_accuracy": 0.8601,
+              "security_recall": 0.8601
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": {
+              "n": 88,
+              "decision_accuracy": 0.8864,
+              "security_recall": 0.5
+            },
+            "40-100": {
+              "n": 726,
+              "decision_accuracy": 0.9229,
+              "security_recall": 0.9874
+            },
+            "100-200": {
+              "n": 318,
+              "decision_accuracy": 0.9088,
+              "security_recall": 0.9444
+            },
+            ">200": {
+              "n": 884,
+              "decision_accuracy": 0.8507,
+              "security_recall": 0.8663
+            }
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 2016,
+              "decision_accuracy": 0.8874,
+              "security_recall": 0.9197
+            },
+            "with history": null
+          }
+        }
+      }
+    },
+    "retrieval_only": {
+      "final_test": {
+        "name": "retrieval_only",
+        "n": 815,
+        "decision_accuracy": 0.3669,
+        "security_recall": 0.8973,
+        "safety_constraint_violation_rate": 0.065,
+        "unsafe_among_released": 0.1596,
+        "false_positive_rate": 0.0669,
+        "false_block_rate_benign": 0.0669,
+        "unnecessary_block_rate": 0.8931,
+        "legit_blocked_rate": 0.5824,
+        "legit_utility": 0.3509,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 118.46,
+          "p95": 193.28,
+          "p99": 255.2
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 279,
+            "REWRITE": 0,
+            "BLOCK": 20
+          },
+          "REWRITE": {
+            "ALLOW": 53,
+            "REWRITE": 0,
+            "BLOCK": 443
+          },
+          "BLOCK": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 20
+          }
+        },
+        "action_counts": {
+          "ALLOW": 332,
+          "REWRITE": 0,
+          "BLOCK": 483
+        },
+        "set": "final_test",
+        "breakdowns": {
+          "by_category": {
+            "benign": {
+              "n": 299,
+              "decision_accuracy": 0.9331,
+              "security_recall": null
+            },
+            "instruction_conflict": {
+              "n": 132,
+              "decision_accuracy": 0.0227,
+              "security_recall": 0.947
+            },
+            "jailbreak": {
+              "n": 137,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.8686
+            },
+            "prompt_injection": {
+              "n": 191,
+              "decision_accuracy": 0.089,
+              "security_recall": 0.9476
+            },
+            "prompt_leak": {
+              "n": 56,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.6786
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": {
+              "n": 33,
+              "decision_accuracy": 0.9697,
+              "security_recall": null
+            },
+            "40-100": {
+              "n": 343,
+              "decision_accuracy": 0.4461,
+              "security_recall": 0.8659
+            },
+            "100-200": {
+              "n": 419,
+              "decision_accuracy": 0.2578,
+              "security_recall": 0.9102
+            },
+            ">200": {
+              "n": 20,
+              "decision_accuracy": 0.3,
+              "security_recall": 1.0
+            }
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 793,
+              "decision_accuracy": 0.3518,
+              "security_recall": 0.8973
+            },
+            "with history": {
+              "n": 22,
+              "decision_accuracy": 0.9091,
+              "security_recall": null
+            }
+          }
+        }
+      },
+      "unseen_test": {
+        "name": "retrieval_only",
+        "n": 109,
+        "decision_accuracy": 0.0,
+        "security_recall": 0.5688,
+        "safety_constraint_violation_rate": 0.4312,
+        "unsafe_among_released": 1.0,
+        "false_positive_rate": null,
+        "false_block_rate_benign": null,
+        "unnecessary_block_rate": 0.5688,
+        "legit_blocked_rate": 0.5688,
+        "legit_utility": 0.0,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 155.18,
+          "p95": 266.34,
+          "p99": 289.59
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "REWRITE": {
+            "ALLOW": 47,
+            "REWRITE": 0,
+            "BLOCK": 62
+          },
+          "BLOCK": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          }
+        },
+        "action_counts": {
+          "ALLOW": 47,
+          "REWRITE": 0,
+          "BLOCK": 62
+        },
+        "set": "unseen_test",
+        "breakdowns": {
+          "by_category": {
+            "jailbreak": {
+              "n": 37,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.5405
+            },
+            "prompt_injection": {
+              "n": 36,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.5556
+            },
+            "prompt_leak": {
+              "n": 36,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.6111
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": null,
+            "40-100": {
+              "n": 14,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.9286
+            },
+            "100-200": {
+              "n": 93,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.5054
+            },
+            ">200": {
+              "n": 2,
+              "decision_accuracy": 0.0,
+              "security_recall": 1.0
+            }
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 109,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.5688
+            },
+            "with history": null
+          }
+        }
+      },
+      "shift_obfuscation": {
+        "name": "retrieval_only",
+        "n": 280,
+        "decision_accuracy": 0.05,
+        "security_recall": 0.85,
+        "safety_constraint_violation_rate": 0.15,
+        "unsafe_among_released": 1.0,
+        "false_positive_rate": null,
+        "false_block_rate_benign": null,
+        "unnecessary_block_rate": 0.8421,
+        "legit_blocked_rate": 0.8421,
+        "legit_utility": 0.0,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 15.09,
+          "p95": 225.2,
+          "p99": 273.52
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "REWRITE": {
+            "ALLOW": 42,
+            "REWRITE": 0,
+            "BLOCK": 224
+          },
+          "BLOCK": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 14
+          }
+        },
+        "action_counts": {
+          "ALLOW": 42,
+          "REWRITE": 0,
+          "BLOCK": 238
+        },
+        "set": "shift_obfuscation",
+        "breakdowns": {
+          "by_category": {
+            "instruction_conflict": {
+              "n": 56,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.8393
+            },
+            "jailbreak": {
+              "n": 56,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.75
+            },
+            "prompt_injection": {
+              "n": 119,
+              "decision_accuracy": 0.1176,
+              "security_recall": 0.9832
+            },
+            "prompt_leak": {
+              "n": 49,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.6531
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": null,
+            "40-100": {
+              "n": 97,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.7629
+            },
+            "100-200": {
+              "n": 177,
+              "decision_accuracy": 0.0791,
+              "security_recall": 0.8927
+            },
+            ">200": {
+              "n": 6,
+              "decision_accuracy": 0.0,
+              "security_recall": 1.0
+            }
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 280,
+              "decision_accuracy": 0.05,
+              "security_recall": 0.85
+            },
+            "with history": null
+          }
+        }
+      },
+      "shift_paraphrase": {
+        "name": "retrieval_only",
+        "n": 60,
+        "decision_accuracy": 0.4,
+        "security_recall": 0.5833,
+        "safety_constraint_violation_rate": 0.25,
+        "unsafe_among_released": 0.4412,
+        "false_positive_rate": 0.2083,
+        "false_block_rate_benign": 0.2083,
+        "unnecessary_block_rate": 0.5714,
+        "legit_blocked_rate": 0.4038,
+        "legit_utility": 0.3654,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 89.85,
+          "p95": 233.58,
+          "p99": 277.3
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 19,
+            "REWRITE": 0,
+            "BLOCK": 5
+          },
+          "REWRITE": {
+            "ALLOW": 12,
+            "REWRITE": 0,
+            "BLOCK": 16
+          },
+          "BLOCK": {
+            "ALLOW": 3,
+            "REWRITE": 0,
+            "BLOCK": 5
+          }
+        },
+        "action_counts": {
+          "ALLOW": 34,
+          "REWRITE": 0,
+          "BLOCK": 26
+        },
+        "set": "shift_paraphrase",
+        "breakdowns": {
+          "by_category": {
+            "benign": {
+              "n": 24,
+              "decision_accuracy": 0.7917,
+              "security_recall": null
+            },
+            "instruction_conflict": {
+              "n": 6,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.8333
+            },
+            "jailbreak": {
+              "n": 6,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.5
+            },
+            "prompt_injection": {
+              "n": 18,
+              "decision_accuracy": 0.2778,
+              "security_recall": 0.5556
+            },
+            "prompt_leak": {
+              "n": 6,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.5
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": {
+              "n": 2,
+              "decision_accuracy": 0.5,
+              "security_recall": 0.0
+            },
+            "40-100": {
+              "n": 42,
+              "decision_accuracy": 0.5476,
+              "security_recall": 0.6316
+            },
+            "100-200": {
+              "n": 16,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.5625
+            },
+            ">200": null
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 60,
+              "decision_accuracy": 0.4,
+              "security_recall": 0.5833
+            },
+            "with history": null
+          }
+        }
+      },
+      "shift_context": {
+        "name": "retrieval_only",
+        "n": 24,
+        "decision_accuracy": 0.9167,
+        "security_recall": 1.0,
+        "safety_constraint_violation_rate": 0.0,
+        "unsafe_among_released": 0.0,
+        "false_positive_rate": 0.25,
+        "false_block_rate_benign": 0.25,
+        "unnecessary_block_rate": null,
+        "legit_blocked_rate": 0.25,
+        "legit_utility": 0.75,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 70.23,
+          "p95": 133.11,
+          "p99": 159.17
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 6,
+            "REWRITE": 0,
+            "BLOCK": 2
+          },
+          "REWRITE": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "BLOCK": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 16
+          }
+        },
+        "action_counts": {
+          "ALLOW": 6,
+          "REWRITE": 0,
+          "BLOCK": 18
+        },
+        "set": "shift_context",
+        "breakdowns": {
+          "by_category": {
+            "benign": {
+              "n": 8,
+              "decision_accuracy": 0.75,
+              "security_recall": null
+            },
+            "jailbreak": {
+              "n": 16,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": {
+              "n": 3,
+              "decision_accuracy": 0.3333,
+              "security_recall": null
+            },
+            "40-100": {
+              "n": 21,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            },
+            "100-200": null,
+            ">200": null
+          },
+          "by_context_length": {
+            "no history": null,
+            "with history": {
+              "n": 24,
+              "decision_accuracy": 0.9167,
+              "security_recall": 1.0
+            }
+          }
+        }
+      },
+      "real_test": {
+        "name": "retrieval_only",
+        "n": 2016,
+        "decision_accuracy": 0.938,
+        "security_recall": 0.8549,
+        "safety_constraint_violation_rate": 0.0278,
+        "unsafe_among_released": 0.0346,
+        "false_positive_rate": 0.0423,
+        "false_block_rate_benign": 0.0423,
+        "unnecessary_block_rate": null,
+        "legit_blocked_rate": 0.0423,
+        "legit_utility": 0.9577,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 192.65,
+          "p95": 1101.52,
+          "p99": 1410.88
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 1561,
+            "REWRITE": 0,
+            "BLOCK": 69
+          },
+          "REWRITE": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "BLOCK": {
+            "ALLOW": 56,
+            "REWRITE": 0,
+            "BLOCK": 330
+          }
+        },
+        "action_counts": {
+          "ALLOW": 1617,
+          "REWRITE": 0,
+          "BLOCK": 399
+        },
+        "set": "real_test",
+        "breakdowns": {
+          "by_category": {
+            "benign": {
+              "n": 1630,
+              "decision_accuracy": 0.9577,
+              "security_recall": null
+            },
+            "harmful": {
+              "n": 193,
+              "decision_accuracy": 0.9534,
+              "security_recall": 0.9534
+            },
+            "jailbreak": {
+              "n": 193,
+              "decision_accuracy": 0.7565,
+              "security_recall": 0.7565
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": {
+              "n": 88,
+              "decision_accuracy": 0.9659,
+              "security_recall": 0.5
+            },
+            "40-100": {
+              "n": 726,
+              "decision_accuracy": 0.9587,
+              "security_recall": 0.9434
+            },
+            "100-200": {
+              "n": 318,
+              "decision_accuracy": 0.9654,
+              "security_recall": 0.9444
+            },
+            ">200": {
+              "n": 884,
+              "decision_accuracy": 0.9084,
+              "security_recall": 0.7701
+            }
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 2016,
+              "decision_accuracy": 0.938,
+              "security_recall": 0.8549
+            },
+            "with history": null
+          }
+        }
+      }
+    },
+    "retrieval_assisted": {
+      "final_test": {
+        "name": "retrieval_assisted",
+        "n": 815,
+        "decision_accuracy": 0.384,
+        "security_recall": 0.9806,
+        "safety_constraint_violation_rate": 0.0123,
+        "unsafe_among_released": 0.033,
+        "false_positive_rate": 0.0201,
+        "false_block_rate_benign": 0.0201,
+        "unnecessary_block_rate": 0.9798,
+        "legit_blocked_rate": 0.6189,
+        "legit_utility": 0.3686,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 118.46,
+          "p95": 193.28,
+          "p99": 255.2
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 293,
+            "REWRITE": 0,
+            "BLOCK": 6
+          },
+          "REWRITE": {
+            "ALLOW": 10,
+            "REWRITE": 0,
+            "BLOCK": 486
+          },
+          "BLOCK": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 20
+          }
+        },
+        "action_counts": {
+          "ALLOW": 303,
+          "REWRITE": 0,
+          "BLOCK": 512
+        },
+        "set": "final_test",
+        "breakdowns": {
+          "by_category": {
+            "benign": {
+              "n": 299,
+              "decision_accuracy": 0.9799,
+              "security_recall": null
+            },
+            "instruction_conflict": {
+              "n": 132,
+              "decision_accuracy": 0.0227,
+              "security_recall": 0.9924
+            },
+            "jailbreak": {
+              "n": 137,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.9708
+            },
+            "prompt_injection": {
+              "n": 191,
+              "decision_accuracy": 0.089,
+              "security_recall": 0.9895
+            },
+            "prompt_leak": {
+              "n": 56,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.9464
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": {
+              "n": 33,
+              "decision_accuracy": 1.0,
+              "security_recall": null
+            },
+            "40-100": {
+              "n": 343,
+              "decision_accuracy": 0.481,
+              "security_recall": 0.9497
+            },
+            "100-200": {
+              "n": 419,
+              "decision_accuracy": 0.2601,
+              "security_recall": 0.9969
+            },
+            ">200": {
+              "n": 20,
+              "decision_accuracy": 0.3,
+              "security_recall": 1.0
+            }
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 793,
+              "decision_accuracy": 0.367,
+              "security_recall": 0.9806
+            },
+            "with history": {
+              "n": 22,
+              "decision_accuracy": 1.0,
+              "security_recall": null
+            }
+          }
+        }
+      },
+      "unseen_test": {
+        "name": "retrieval_assisted",
+        "n": 109,
+        "decision_accuracy": 0.0,
+        "security_recall": 0.7706,
+        "safety_constraint_violation_rate": 0.2294,
+        "unsafe_among_released": 1.0,
+        "false_positive_rate": null,
+        "false_block_rate_benign": null,
+        "unnecessary_block_rate": 0.7706,
+        "legit_blocked_rate": 0.7706,
+        "legit_utility": 0.0,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 155.18,
+          "p95": 266.34,
+          "p99": 289.59
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "REWRITE": {
+            "ALLOW": 25,
+            "REWRITE": 0,
+            "BLOCK": 84
+          },
+          "BLOCK": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          }
+        },
+        "action_counts": {
+          "ALLOW": 25,
+          "REWRITE": 0,
+          "BLOCK": 84
+        },
+        "set": "unseen_test",
+        "breakdowns": {
+          "by_category": {
+            "jailbreak": {
+              "n": 37,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.6486
+            },
+            "prompt_injection": {
+              "n": 36,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.8056
+            },
+            "prompt_leak": {
+              "n": 36,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.8611
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": null,
+            "40-100": {
+              "n": 14,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.9286
+            },
+            "100-200": {
+              "n": 93,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.7419
+            },
+            ">200": {
+              "n": 2,
+              "decision_accuracy": 0.0,
+              "security_recall": 1.0
+            }
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 109,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.7706
+            },
+            "with history": null
+          }
+        }
+      },
+      "shift_obfuscation": {
+        "name": "retrieval_assisted",
+        "n": 280,
+        "decision_accuracy": 0.05,
+        "security_recall": 0.9607,
+        "safety_constraint_violation_rate": 0.0393,
+        "unsafe_among_released": 1.0,
+        "false_positive_rate": null,
+        "false_block_rate_benign": null,
+        "unnecessary_block_rate": 0.9586,
+        "legit_blocked_rate": 0.9586,
+        "legit_utility": 0.0,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 15.09,
+          "p95": 225.2,
+          "p99": 273.52
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "REWRITE": {
+            "ALLOW": 11,
+            "REWRITE": 0,
+            "BLOCK": 255
+          },
+          "BLOCK": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 14
+          }
+        },
+        "action_counts": {
+          "ALLOW": 11,
+          "REWRITE": 0,
+          "BLOCK": 269
+        },
+        "set": "shift_obfuscation",
+        "breakdowns": {
+          "by_category": {
+            "instruction_conflict": {
+              "n": 56,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.9821
+            },
+            "jailbreak": {
+              "n": 56,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.8929
+            },
+            "prompt_injection": {
+              "n": 119,
+              "decision_accuracy": 0.1176,
+              "security_recall": 0.9916
+            },
+            "prompt_leak": {
+              "n": 49,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.9388
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": null,
+            "40-100": {
+              "n": 97,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.9278
+            },
+            "100-200": {
+              "n": 177,
+              "decision_accuracy": 0.0791,
+              "security_recall": 0.9774
+            },
+            ">200": {
+              "n": 6,
+              "decision_accuracy": 0.0,
+              "security_recall": 1.0
+            }
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 280,
+              "decision_accuracy": 0.05,
+              "security_recall": 0.9607
+            },
+            "with history": null
+          }
+        }
+      },
+      "shift_paraphrase": {
+        "name": "retrieval_assisted",
+        "n": 60,
+        "decision_accuracy": 0.3667,
+        "security_recall": 0.6667,
+        "safety_constraint_violation_rate": 0.2,
+        "unsafe_among_released": 0.4138,
+        "false_positive_rate": 0.2917,
+        "false_block_rate_benign": 0.2917,
+        "unnecessary_block_rate": 0.6786,
+        "legit_blocked_rate": 0.5,
+        "legit_utility": 0.3269,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 89.85,
+          "p95": 233.58,
+          "p99": 277.3
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 17,
+            "REWRITE": 0,
+            "BLOCK": 7
+          },
+          "REWRITE": {
+            "ALLOW": 9,
+            "REWRITE": 0,
+            "BLOCK": 19
+          },
+          "BLOCK": {
+            "ALLOW": 3,
+            "REWRITE": 0,
+            "BLOCK": 5
+          }
+        },
+        "action_counts": {
+          "ALLOW": 29,
+          "REWRITE": 0,
+          "BLOCK": 31
+        },
+        "set": "shift_paraphrase",
+        "breakdowns": {
+          "by_category": {
+            "benign": {
+              "n": 24,
+              "decision_accuracy": 0.7083,
+              "security_recall": null
+            },
+            "instruction_conflict": {
+              "n": 6,
+              "decision_accuracy": 0.0,
+              "security_recall": 1.0
+            },
+            "jailbreak": {
+              "n": 6,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.8333
+            },
+            "prompt_injection": {
+              "n": 18,
+              "decision_accuracy": 0.2778,
+              "security_recall": 0.5556
+            },
+            "prompt_leak": {
+              "n": 6,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.5
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": {
+              "n": 2,
+              "decision_accuracy": 0.5,
+              "security_recall": 0.0
+            },
+            "40-100": {
+              "n": 42,
+              "decision_accuracy": 0.5,
+              "security_recall": 0.6316
+            },
+            "100-200": {
+              "n": 16,
+              "decision_accuracy": 0.0,
+              "security_recall": 0.75
+            },
+            ">200": null
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 60,
+              "decision_accuracy": 0.3667,
+              "security_recall": 0.6667
+            },
+            "with history": null
+          }
+        }
+      },
+      "shift_context": {
+        "name": "retrieval_assisted",
+        "n": 24,
+        "decision_accuracy": 0.9167,
+        "security_recall": 1.0,
+        "safety_constraint_violation_rate": 0.0,
+        "unsafe_among_released": 0.0,
+        "false_positive_rate": 0.25,
+        "false_block_rate_benign": 0.25,
+        "unnecessary_block_rate": null,
+        "legit_blocked_rate": 0.25,
+        "legit_utility": 0.75,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 70.23,
+          "p95": 133.11,
+          "p99": 159.17
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 6,
+            "REWRITE": 0,
+            "BLOCK": 2
+          },
+          "REWRITE": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "BLOCK": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 16
+          }
+        },
+        "action_counts": {
+          "ALLOW": 6,
+          "REWRITE": 0,
+          "BLOCK": 18
+        },
+        "set": "shift_context",
+        "breakdowns": {
+          "by_category": {
+            "benign": {
+              "n": 8,
+              "decision_accuracy": 0.75,
+              "security_recall": null
+            },
+            "jailbreak": {
+              "n": 16,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": {
+              "n": 3,
+              "decision_accuracy": 0.3333,
+              "security_recall": null
+            },
+            "40-100": {
+              "n": 21,
+              "decision_accuracy": 1.0,
+              "security_recall": 1.0
+            },
+            "100-200": null,
+            ">200": null
+          },
+          "by_context_length": {
+            "no history": null,
+            "with history": {
+              "n": 24,
+              "decision_accuracy": 0.9167,
+              "security_recall": 1.0
+            }
+          }
+        }
+      },
+      "real_test": {
+        "name": "retrieval_assisted",
+        "n": 2016,
+        "decision_accuracy": 0.937,
+        "security_recall": 0.8601,
+        "safety_constraint_violation_rate": 0.0268,
+        "unsafe_among_released": 0.0335,
+        "false_positive_rate": 0.0448,
+        "false_block_rate_benign": 0.0448,
+        "unnecessary_block_rate": null,
+        "legit_blocked_rate": 0.0448,
+        "legit_utility": 0.9552,
+        "rewrite_success": null,
+        "intent_preservation_after": null,
+        "latency_ms": {
+          "p50": 192.65,
+          "p95": 1101.52,
+          "p99": 1410.88
+        },
+        "confusion": {
+          "ALLOW": {
+            "ALLOW": 1557,
+            "REWRITE": 0,
+            "BLOCK": 73
+          },
+          "REWRITE": {
+            "ALLOW": 0,
+            "REWRITE": 0,
+            "BLOCK": 0
+          },
+          "BLOCK": {
+            "ALLOW": 54,
+            "REWRITE": 0,
+            "BLOCK": 332
+          }
+        },
+        "action_counts": {
+          "ALLOW": 1611,
+          "REWRITE": 0,
+          "BLOCK": 405
+        },
+        "set": "real_test",
+        "breakdowns": {
+          "by_category": {
+            "benign": {
+              "n": 1630,
+              "decision_accuracy": 0.9552,
+              "security_recall": null
+            },
+            "harmful": {
+              "n": 193,
+              "decision_accuracy": 0.943,
+              "security_recall": 0.943
+            },
+            "jailbreak": {
+              "n": 193,
+              "decision_accuracy": 0.7772,
+              "security_recall": 0.7772
+            }
+          },
+          "by_prompt_length": {
+            "<40 chars": {
+              "n": 88,
+              "decision_accuracy": 0.9659,
+              "security_recall": 0.5
+            },
+            "40-100": {
+              "n": 726,
+              "decision_accuracy": 0.9628,
+              "security_recall": 0.9434
+            },
+            "100-200": {
+              "n": 318,
+              "decision_accuracy": 0.9686,
+              "security_recall": 0.8889
+            },
+            ">200": {
+              "n": 884,
+              "decision_accuracy": 0.9016,
+              "security_recall": 0.7914
+            }
+          },
+          "by_context_length": {
+            "no history": {
+              "n": 2016,
+              "decision_accuracy": 0.937,
+              "security_recall": 0.8601
+            },
+            "with history": null
+          }
+        }
+      }
+    }
+  }
+}

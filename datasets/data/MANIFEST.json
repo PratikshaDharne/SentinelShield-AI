@@ -1,0 +1,51 @@
+{
+  "version": "1.0.0",
+  "counts": {
+    "test": 3214,
+    "train": 14821,
+    "val": 2986,
+    "unseen_test": 109,
+    "val_unseen": 140,
+    "final_test": 815,
+    "real_test": 2016,
+    "disputed_excluded": 479
+  },
+  "by_category": {
+    "jailbreak": 2570,
+    "instruction_conflict": 926,
+    "benign": 14319,
+    "prompt_injection": 1508,
+    "prompt_leak": 572,
+    "tool_abuse": 42,
+    "harmful": 1333
+  },
+  "by_decision": {
+    "BLOCK": 3611,
+    "REWRITE": 3340,
+    "ALLOW": 14319
+  },
+  "by_source": {
+    "synthetic_multiturn": 240,
+    "synthetic_wrap": 3200,
+    "synthetic_benign": 1800,
+    "synthetic_clean_rewrite": 1200,
+    "synthetic_generic": 240,
+    "synthetic_pure": 640,
+    "synthetic_tool": 42,
+    "synthetic_ambiguous": 56,
+    "synthetic_multiturn_benign": 160,
+    "synthetic_secedu": 72,
+    "synthetic_val_unseen": 140,
+    "synthetic_tool_safe": 30,
+    "synthetic_harm": 30,
+    "advbench": 520,
+    "alpaca_clean": 4000,
+    "code_alpaca": 999,
+    "forbidden_q": 390,
+    "harmbench": 393,
+    "mt_bench": 160,
+    "self_instruct": 252,
+    "wild_jailbreak": 1356,
+    "wild_regular": 5350
+  }
+}

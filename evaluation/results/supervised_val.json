@@ -1,0 +1,42 @@
+{
+  "name": "supervised_arb",
+  "n": 2986,
+  "decision_accuracy": 0.9658,
+  "security_recall": 0.9487,
+  "safety_constraint_violation_rate": 0.0174,
+  "unsafe_among_released": 0.021,
+  "false_positive_rate": 0.0192,
+  "false_block_rate_benign": 0.0177,
+  "unnecessary_block_rate": 0.0312,
+  "legit_blocked_rate": 0.0202,
+  "legit_utility": 0.9742,
+  "rewrite_success": 0.9747,
+  "intent_preservation_after": 0.8563,
+  "latency_ms": {
+    "p50": 41.13,
+    "p95": 251.23,
+    "p99": 330.64
+  },
+  "confusion": {
+    "ALLOW": {
+      "ALLOW": 1992,
+      "REWRITE": 3,
+      "BLOCK": 36
+    },
+    "REWRITE": {
+      "ALLOW": 0,
+      "REWRITE": 435,
+      "BLOCK": 14
+    },
+    "BLOCK": {
+      "ALLOW": 49,
+      "REWRITE": 0,
+      "BLOCK": 457
+    }
+  },
+  "action_counts": {
+    "ALLOW": 2041,
+    "REWRITE": 438,
+    "BLOCK": 507
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "saved_at": 1791216726.3808408,
+  "updates": 8354,
+  "labeled": 240,
+  "lambdas": {
+    "fn": 5,
+    "fp": 1.5,
+    "br": 1.5,
+    "rw": 1.0,
+    "lat": 0.05
+  },
+  "mode": "shadow"
+}

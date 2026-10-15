@@ -1,0 +1,282 @@
+{
+  "question": "Which signals contribute most to safe decisions?",
+  "variants": {
+    "full": {
+      "final_test": {
+        "decision_accuracy": 0.9742,
+        "security_recall": 1.0,
+        "safety_constraint_violation_rate": 0.0012,
+        "false_positive_rate": 0.0234
+      },
+      "unseen_test": {
+        "decision_accuracy": 0.7982,
+        "security_recall": 0.7982,
+        "safety_constraint_violation_rate": 0.2018,
+        "false_positive_rate": null
+      },
+      "shift_obfuscation": {
+        "decision_accuracy": 0.9393,
+        "security_recall": 0.9964,
+        "safety_constraint_violation_rate": 0.0036,
+        "false_positive_rate": null
+      },
+      "shift_paraphrase": {
+        "decision_accuracy": 0.8667,
+        "security_recall": 0.9167,
+        "safety_constraint_violation_rate": 0.05,
+        "false_positive_rate": 0.2083
+      },
+      "shift_context": {
+        "decision_accuracy": 1.0,
+        "security_recall": 1.0,
+        "safety_constraint_violation_rate": 0.0,
+        "false_positive_rate": 0.0
+      },
+      "real_test": {
+        "decision_accuracy": 0.8418,
+        "security_recall": 0.9326,
+        "safety_constraint_violation_rate": 0.0129,
+        "false_positive_rate": 0.1387
+      }
+    },
+    "rules": {
+      "final_test": {
+        "decision_accuracy": 0.9092,
+        "security_recall": 0.9399,
+        "safety_constraint_violation_rate": 0.0393,
+        "false_positive_rate": 0.0
+      },
+      "unseen_test": {
+        "decision_accuracy": 0.578,
+        "security_recall": 0.578,
+        "safety_constraint_violation_rate": 0.422,
+        "false_positive_rate": null
+      },
+      "shift_obfuscation": {
+        "decision_accuracy": 0.8179,
+        "security_recall": 0.95,
+        "safety_constraint_violation_rate": 0.05,
+        "false_positive_rate": null
+      },
+      "shift_paraphrase": {
+        "decision_accuracy": 0.55,
+        "security_recall": 0.5278,
+        "safety_constraint_violation_rate": 0.2833,
+        "false_positive_rate": 0.0833
+      },
+      "shift_context": {
+        "decision_accuracy": 1.0,
+        "security_recall": 1.0,
+        "safety_constraint_violation_rate": 0.0,
+        "false_positive_rate": 0.0
+      },
+      "real_test": {
+        "decision_accuracy": 0.9593,
+        "security_recall": 0.8627,
+        "safety_constraint_violation_rate": 0.0263,
+        "false_positive_rate": 0.0172
+      }
+    },
+    "classifier": {
+      "final_test": {
+        "decision_accuracy": 0.9742,
+        "security_recall": 1.0,
+        "safety_constraint_violation_rate": 0.0012,
+        "false_positive_rate": 0.0234
+      },
+      "unseen_test": {
+        "decision_accuracy": 0.6606,
+        "security_recall": 0.6606,
+        "safety_constraint_violation_rate": 0.3394,
+        "false_positive_rate": null
+      },
+      "shift_obfuscation": {
+        "decision_accuracy": 0.9357,
+        "security_recall": 0.9929,
+        "safety_constraint_violation_rate": 0.0071,
+        "false_positive_rate": null
+      },
+      "shift_paraphrase": {
+        "decision_accuracy": 0.8667,
+        "security_recall": 0.8889,
+        "safety_constraint_violation_rate": 0.0667,
+        "false_positive_rate": 0.1667
+      },
+      "shift_context": {
+        "decision_accuracy": 1.0,
+        "security_recall": 1.0,
+        "safety_constraint_violation_rate": 0.0,
+        "false_positive_rate": 0.0
+      },
+      "real_test": {
+        "decision_accuracy": 0.8348,
+        "security_recall": 0.8705,
+        "safety_constraint_violation_rate": 0.0248,
+        "false_positive_rate": 0.1325
+      }
+    },
+    "retrieval": {
+      "final_test": {
+        "decision_accuracy": 0.9742,
+        "security_recall": 1.0,
+        "safety_constraint_violation_rate": 0.0012,
+        "false_positive_rate": 0.0234
+      },
+      "unseen_test": {
+        "decision_accuracy": 0.6972,
+        "security_recall": 0.6972,
+        "safety_constraint_violation_rate": 0.3028,
+        "false_positive_rate": null
+      },
+      "shift_obfuscation": {
+        "decision_accuracy": 0.9357,
+        "security_recall": 0.9929,
+        "safety_constraint_violation_rate": 0.0071,
+        "false_positive_rate": null
+      },
+      "shift_paraphrase": {
+        "decision_accuracy": 0.8667,
+        "security_recall": 0.8889,
+        "safety_constraint_violation_rate": 0.0667,
+        "false_positive_rate": 0.1667
+      },
+      "shift_context": {
+        "decision_accuracy": 1.0,
+        "security_recall": 1.0,
+        "safety_constraint_violation_rate": 0.0,
+        "false_positive_rate": 0.0
+      },
+      "real_test": {
+        "decision_accuracy": 0.8388,
+        "security_recall": 0.9016,
+        "safety_constraint_violation_rate": 0.0188,
+        "false_positive_rate": 0.135
+      }
+    },
+    "context": {
+      "final_test": {
+        "decision_accuracy": 0.9742,
+        "security_recall": 1.0,
+        "safety_constraint_violation_rate": 0.0012,
+        "false_positive_rate": 0.0234
+      },
+      "unseen_test": {
+        "decision_accuracy": 0.7982,
+        "security_recall": 0.7982,
+        "safety_constraint_violation_rate": 0.2018,
+        "false_positive_rate": null
+      },
+      "shift_obfuscation": {
+        "decision_accuracy": 0.9393,
+        "security_recall": 0.9964,
+        "safety_constraint_violation_rate": 0.0036,
+        "false_positive_rate": null
+      },
+      "shift_paraphrase": {
+        "decision_accuracy": 0.8667,
+        "security_recall": 0.9167,
+        "safety_constraint_violation_rate": 0.05,
+        "false_positive_rate": 0.2083
+      },
+      "shift_context": {
+        "decision_accuracy": 1.0,
+        "security_recall": 1.0,
+        "safety_constraint_violation_rate": 0.0,
+        "false_positive_rate": 0.0
+      },
+      "real_test": {
+        "decision_accuracy": 0.8418,
+        "security_recall": 0.9326,
+        "safety_constraint_violation_rate": 0.0129,
+        "false_positive_rate": 0.1387
+      }
+    },
+    "semantic": {
+      "final_test": {
+        "decision_accuracy": 0.9742,
+        "security_recall": 1.0,
+        "safety_constraint_violation_rate": 0.0012,
+        "false_positive_rate": 0.0234
+      },
+      "unseen_test": {
+        "decision_accuracy": 0.6972,
+        "security_recall": 0.6972,
+        "safety_constraint_violation_rate": 0.3028,
+        "false_positive_rate": null
+      },
+      "shift_obfuscation": {
+        "decision_accuracy": 0.9357,
+        "security_recall": 0.9929,
+        "safety_constraint_violation_rate": 0.0071,
+        "false_positive_rate": null
+      },
+      "shift_paraphrase": {
+        "decision_accuracy": 0.8667,
+        "security_recall": 0.8889,
+        "safety_constraint_violation_rate": 0.0667,
+        "false_positive_rate": 0.1667
+      },
+      "shift_context": {
+        "decision_accuracy": 1.0,
+        "security_recall": 1.0,
+        "safety_constraint_violation_rate": 0.0,
+        "false_positive_rate": 0.0
+      },
+      "real_test": {
+        "decision_accuracy": 0.8388,
+        "security_recall": 0.9016,
+        "safety_constraint_violation_rate": 0.0188,
+        "false_positive_rate": 0.135
+      }
+    }
+  },
+  "accuracy_drop_when_removed": {
+    "rules": {
+      "final_test": 0.065,
+      "unseen_test": 0.2202,
+      "shift_obfuscation": 0.1214,
+      "shift_paraphrase": 0.3167,
+      "shift_context": 0.0,
+      "real_test": -0.1175
+    },
+    "classifier": {
+      "final_test": 0.0,
+      "unseen_test": 0.1376,
+      "shift_obfuscation": 0.0036,
+      "shift_paraphrase": 0.0,
+      "shift_context": 0.0,
+      "real_test": 0.007
+    },
+    "retrieval": {
+      "final_test": 0.0,
+      "unseen_test": 0.101,
+      "shift_obfuscation": 0.0036,
+      "shift_paraphrase": 0.0,
+      "shift_context": 0.0,
+      "real_test": 0.003
+    },
+    "context": {
+      "final_test": 0.0,
+      "unseen_test": 0.0,
+      "shift_obfuscation": 0.0,
+      "shift_paraphrase": 0.0,
+      "shift_context": 0.0,
+      "real_test": 0.0
+    },
+    "semantic": {
+      "final_test": 0.0,
+      "unseen_test": 0.101,
+      "shift_obfuscation": 0.0036,
+      "shift_paraphrase": 0.0,
+      "shift_context": 0.0,
+      "real_test": 0.003
+    }
+  },
+  "groups": {
+    "rules": "hard/structural rules + clause tagger",
+    "classifier": "threat classifier",
+    "retrieval": "MiniLM+FAISS vote",
+    "context": "multi-turn context + decision history",
+    "semantic": "embedding-based retrieval + semantic cluster"
+  }
+}

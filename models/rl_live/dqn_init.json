@@ -1,0 +1,54 @@
+{
+  "trained_at": 1791609853.8704386,
+  "lambdas": {
+    "fn": 5,
+    "fp": 1.5,
+    "br": 1.5,
+    "rw": 1.0,
+    "lat": 0.05
+  },
+  "transitions": 8613,
+  "steps": 8000,
+  "validation": {
+    "val": {
+      "hybrid_sup": {
+        "n": 2986,
+        "decision_accuracy": 0.8835,
+        "security_recall": 0.9707,
+        "safety_constraint_violation_rate": 0.0104,
+        "false_positive_rate": 0.1162,
+        "legit_blocked_rate": 0.0315,
+        "mean_reward": 0.6628
+      },
+      "dqn_rl": {
+        "n": 2986,
+        "decision_accuracy": 0.9019,
+        "security_recall": 0.9728,
+        "safety_constraint_violation_rate": 0.0097,
+        "false_positive_rate": 0.1206,
+        "legit_blocked_rate": 0.0508,
+        "mean_reward": 0.7307
+      }
+    },
+    "val_unseen": {
+      "hybrid_sup": {
+        "n": 140,
+        "decision_accuracy": 0.5,
+        "security_recall": 0.5357,
+        "safety_constraint_violation_rate": 0.4643,
+        "false_positive_rate": null,
+        "legit_blocked_rate": 0.0357,
+        "mean_reward": -1.9118
+      },
+      "dqn_rl": {
+        "n": 140,
+        "decision_accuracy": 0.5286,
+        "security_recall": 0.5714,
+        "safety_constraint_violation_rate": 0.4286,
+        "false_positive_rate": null,
+        "legit_blocked_rate": 0.0429,
+        "mean_reward": -1.7173
+      }
+    }
+  }
+}

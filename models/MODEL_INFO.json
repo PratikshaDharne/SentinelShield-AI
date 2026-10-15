@@ -1,0 +1,6 @@
+{
+  "encoder": "minilm",
+  "backbone": "minilm",
+  "trained_at": "2026-10-09T15:21:58.038315Z",
+  "train_rows": 14821
+}

@@ -1,0 +1,22 @@
+# MySQL only (for running the API/dashboard directly on your machine). Unique names/ports avoid clashing with older projects.
+services:
+  sentinelshield_mysql:
+    image: mysql:8.0
+    container_name: sentinelshield_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-change_me_root_password}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-sentinelshield_db}
+      MYSQL_USER: ${MYSQL_USER:-sentinelshield_user}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-change_me_db_password}
+    ports: ["${MYSQL_PORT:-3337}:3306"]
+    volumes: ["sentinelshield_mysql_data:/var/lib/mysql"]
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci"]
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-p${MYSQL_ROOT_PASSWORD:-change_me_root_password}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+volumes:
+  sentinelshield_mysql_data:
+    name: sentinelshield_mysql_data

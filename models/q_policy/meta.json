@@ -1,0 +1,21 @@
+{
+  "lambdas": {
+    "fn": 5,
+    "fp": 1.5,
+    "br": 1.5,
+    "rw": 1.0,
+    "lat": 0.05
+  },
+  "epochs": 50,
+  "gamma": 0.3,
+  "visited_states": 860,
+  "intent_floor": 0.5,
+  "recommended": true,
+  "baseline_val_accuracy": 0.8663,
+  "baseline_val_violation": 0.0307,
+  "baseline_val_fpr": 0.1162,
+  "selected_on": "validation",
+  "constraint_max_violation": 0.02,
+  "encoder": "minilm",
+  "margin": 1.5
+}

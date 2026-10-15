@@ -1,0 +1,69 @@
+# SentinelShield AI - full stack: MySQL + FastAPI guardrail + Streamlit owner dashboard.
+# No Ollama here by design: answers come from Gemini (primary) / Groq (fallback) via API keys.
+# Usage:  cp .env.example .env  (edit secrets/keys)  &&  docker compose up -d --build
+# Heavy ML (MiniLM + Flan-T5):  docker compose build --build-arg WITH_ML=true sentinelshield_api
+name: sentinelshield
+services:
+  sentinelshield_mysql:
+    image: mysql:8.0
+    container_name: sentinelshield_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-change_me_root_password}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-sentinelshield_db}
+      MYSQL_USER: ${MYSQL_USER:-sentinelshield_user}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-change_me_db_password}
+    ports: ["${MYSQL_PORT:-3337}:3306"]
+    volumes: ["sentinelshield_mysql_data:/var/lib/mysql"]
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci"]
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-p${MYSQL_ROOT_PASSWORD:-change_me_root_password}"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    networks: [sentinelshield_net]
+
+  sentinelshield_api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+      args:
+        WITH_ML: ${WITH_ML:-false}
+    container_name: sentinelshield_api
+    restart: unless-stopped
+    env_file: [.env]
+    environment:
+      DATABASE_URL: mysql+pymysql://${MYSQL_USER:-sentinelshield_user}:${MYSQL_PASSWORD:-change_me_db_password}@sentinelshield_mysql:3306/${MYSQL_DATABASE:-sentinelshield_db}
+    ports: ["${API_PORT:-8130}:8130"]
+    depends_on:
+      sentinelshield_mysql: { condition: service_healthy }
+    volumes:
+      - ./models:/app/models
+      - ./evaluation/results:/app/evaluation/results
+      - ./datasets:/app/datasets
+      - sentinelshield_hf_cache:/root/.cache
+    networks: [sentinelshield_net]
+
+  sentinelshield_dashboard:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dashboard
+    container_name: sentinelshield_dashboard
+    restart: unless-stopped
+    environment:
+      API_URL: http://sentinelshield_api:8130
+    ports: ["${DASHBOARD_PORT:-8630}:8630"]
+    depends_on:
+      sentinelshield_api: { condition: service_healthy }
+    volumes:
+      - ./dashboard/assets:/app/dashboard/assets
+    networks: [sentinelshield_net]
+
+networks:
+  sentinelshield_net:
+    name: sentinelshield_net
+volumes:
+  sentinelshield_mysql_data:
+    name: sentinelshield_mysql_data
+  sentinelshield_hf_cache:
+    name: sentinelshield_hf_cache

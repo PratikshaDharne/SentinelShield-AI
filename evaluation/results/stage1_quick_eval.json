@@ -1,0 +1,68 @@
+[
+  {
+    "split": "test",
+    "n": 1198,
+    "decision_accuracy": 0.9967,
+    "security_recall": 1.0,
+    "safety_constraint_violation_rate": 0.0,
+    "false_positive_rate": 0.0074,
+    "block_rate_on_benign": 0.0074,
+    "rewrite_recall_on_rewrite_cases": 1.0,
+    "latency_ms": {
+      "p50": 5.46,
+      "p95": 9.37,
+      "p99": 11.73
+    },
+    "confusion": {
+      "ALLOW": {
+        "ALLOW": 536,
+        "REWRITE": 0,
+        "BLOCK": 4
+      },
+      "REWRITE": {
+        "ALLOW": 0,
+        "REWRITE": 496,
+        "BLOCK": 0
+      },
+      "BLOCK": {
+        "ALLOW": 0,
+        "REWRITE": 0,
+        "BLOCK": 162
+      }
+    },
+    "encoder": "hash"
+  },
+  {
+    "split": "unseen_test",
+    "n": 109,
+    "decision_accuracy": 0.7706,
+    "security_recall": 0.7706,
+    "safety_constraint_violation_rate": 0.2294,
+    "false_positive_rate": NaN,
+    "block_rate_on_benign": NaN,
+    "rewrite_recall_on_rewrite_cases": 0.7706,
+    "latency_ms": {
+      "p50": 9.21,
+      "p95": 11.32,
+      "p99": 13.91
+    },
+    "confusion": {
+      "ALLOW": {
+        "ALLOW": 0,
+        "REWRITE": 0,
+        "BLOCK": 0
+      },
+      "REWRITE": {
+        "ALLOW": 25,
+        "REWRITE": 84,
+        "BLOCK": 0
+      },
+      "BLOCK": {
+        "ALLOW": 0,
+        "REWRITE": 0,
+        "BLOCK": 0
+      }
+    },
+    "encoder": "hash"
+  }
+]

@@ -1,0 +1,5 @@
+# Heavy ML extras: MiniLM embeddings, Flan-T5 rewriter, HF datasets. Installed with --build-arg WITH_ML=true
+sentence-transformers>=2.7
+transformers>=4.40
+torch>=2.2
+datasets>=2.19

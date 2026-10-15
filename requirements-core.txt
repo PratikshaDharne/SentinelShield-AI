@@ -1,0 +1,15 @@
+# Lightweight runtime (API + dashboard, hash encoder / TF-IDF classifier). Used by the default Docker build.
+fastapi>=0.110
+uvicorn[standard]>=0.29
+sqlalchemy>=2.0
+pymysql>=1.1
+cryptography>=42
+httpx>=0.27
+pyjwt>=2.8
+python-dotenv>=1.0
+pyyaml>=6.0
+numpy>=1.26
+scikit-learn>=1.4
+joblib>=1.3
+faiss-cpu>=1.8
+pandas>=2.2

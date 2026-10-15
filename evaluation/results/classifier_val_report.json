@@ -1,0 +1,61 @@
+{
+  "backbone": "minilm",
+  "encoder": "minilm",
+  "report": {
+    "benign": {
+      "precision": 0.9820010587612493,
+      "recall": 0.913343180699163,
+      "f1-score": 0.9464285714285714,
+      "support": 2031.0
+    },
+    "harmful": {
+      "precision": 0.79296875,
+      "recall": 0.9759615384615384,
+      "f1-score": 0.875,
+      "support": 208.0
+    },
+    "instruction_conflict": {
+      "precision": 0.8344827586206897,
+      "recall": 0.8962962962962963,
+      "f1-score": 0.8642857142857143,
+      "support": 135.0
+    },
+    "jailbreak": {
+      "precision": 0.707196029776675,
+      "recall": 0.8456973293768546,
+      "f1-score": 0.7702702702702703,
+      "support": 337.0
+    },
+    "prompt_injection": {
+      "precision": 0.9154228855721394,
+      "recall": 0.8975609756097561,
+      "f1-score": 0.9064039408866995,
+      "support": 205.0
+    },
+    "prompt_leak": {
+      "precision": 0.6904761904761905,
+      "recall": 0.9354838709677419,
+      "f1-score": 0.7945205479452054,
+      "support": 62.0
+    },
+    "tool_abuse": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 8.0
+    },
+    "accuracy": 0.9089082384460817,
+    "macro avg": {
+      "precision": 0.8460782390295635,
+      "recall": 0.92347759877305,
+      "f1-score": 0.8795584349737801,
+      "support": 2986.0
+    },
+    "weighted avg": {
+      "precision": 0.9205737106980718,
+      "recall": 0.9089082384460817,
+      "f1-score": 0.9120995187325711,
+      "support": 2986.0
+    }
+  }
+}
